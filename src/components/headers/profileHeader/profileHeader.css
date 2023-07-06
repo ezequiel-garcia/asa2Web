@@ -1,0 +1,24 @@
+.container{
+    /* width: 100%; */
+    background-color: var(--primary800);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    
+}
+
+.picture-name-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+img {
+    border-radius: 50%;
+    height: 8rem;
+    width: 8rem;
+    object-fit: cover;
+}
+
