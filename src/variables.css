@@ -1,11 +1,13 @@
 :root {
-    --primary800: #0D1F2D;
-    --primary600: #0d1f2dc0;
-    --primary500: #12324A;
+    --primary800: rgb(13, 31, 45);
+    --primary600: #0d1f2dd6;
+    --primary500: #0f293d;
     --secondary600: #f57637;
     --secondary400: #F38148;
     --secondary300: #d7845a;
     --error50: #fc9191;
     --error200: #eb4e4e;
     --error500: #e30f28e1;
+    --background:  linear-gradient(180deg, rgba(13, 31, 45, 0.81) 0%, rgba(13, 31, 45, 0.157) 99%);
+
 }

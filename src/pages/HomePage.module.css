@@ -1,0 +1,13 @@
+.container {
+    min-height: 100vh;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem
+}
+
+.container h2{
+    font-weight: 300;
+}
