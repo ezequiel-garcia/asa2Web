@@ -1,12 +1,12 @@
 .container{
     /* width: 100%; */
-    background-color: var(--primary800);
-    color: white;
+    background-color: var(--dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    
+    color: var(--primary)
+
 }
 
 .picture-name-container{
@@ -22,9 +22,13 @@ img {
     object-fit: cover;
 }
 
-a{
+.container a{
     font-size: 1.8rem;
-    
-
 }
+
+.container a:hover{
+    cursor: pointer;
+}
+
+
 

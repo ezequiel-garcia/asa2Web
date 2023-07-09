@@ -1,10 +1,22 @@
 :root {
-    --primary800: rgb(13, 31, 45);
+
+    --primary: #f5f6fa;
+    --primary2: #e6e7e8;
+    /* --primary: #f5f6fa; */
+    --secondary: #757575;
+    --tertiary: #FF6B00;
+    --backgrounds: #858faf;
+    --dark: #000000;
+
+
+
+
+    /* --primary800: rgb(13, 31, 45);
     --primary600: #0d1f2dd6;
     --primary500: #0f293d;
     --secondary600: #f57637;
     --secondary400: #F38148;
-    --secondary300: #d7845a;
+    --secondary300: #d7845a; */
     --error50: #fc9191;
     --error200: #eb4e4e;
     --error500: #e30f28e1;

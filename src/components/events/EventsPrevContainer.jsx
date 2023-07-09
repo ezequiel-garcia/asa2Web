@@ -6,7 +6,7 @@ const EventsPrevContainer = ({ events }) => {
   return (
     <div className={styles['prevEvents-container']}>
       {events?.map((event) => {
-        return <EventPrev key={event.id} className={styles.last} />;
+        return <EventPrev key={event.id} />;
       })}
     </div>
   );
