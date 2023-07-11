@@ -9,6 +9,7 @@ const HomePage = () => {
   const filteredEvents = events.filter((event) =>
     event.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
   return (
     <div className={styles.container}>
       <SearchBar searchQuery={searchQuery} onSearch={setSearchQuery} />
