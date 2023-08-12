@@ -1,11 +1,15 @@
 .container{
-    /* width: 100%; */
+    width: 100%;
+    position: sticky;
+    top: 0;
     background-color: var(--dark);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    color: var(--primary)
+    color: var(--primary);
+    z-index: 10;
+    
 
 }
 

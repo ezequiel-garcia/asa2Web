@@ -1,0 +1,31 @@
+.sidebar{
+    position: fixed;
+    top: 80px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--backgroundsLight) ;
+    height: 100%;
+    padding: 20px;
+    z-index: 1;
+    /* width: 150px; */
+}
+
+.sidebar a{
+    /* color: var(--primary); */
+    font-size: 20px;
+}
+
+
+.sidebar span{
+    display: none;
+}
+
+@media(min-width: 760px){
+    .sidebar span{
+        display:inline;
+    }
+
+}
