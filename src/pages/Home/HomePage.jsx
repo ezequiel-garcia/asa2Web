@@ -14,7 +14,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.container}>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <MainContainer>
         <SearchBar searchQuery={searchQuery} onSearch={setSearchQuery} />
         <h2>Upcoming Events</h2>
