@@ -1,15 +1,27 @@
 import "./App.css";
 import "./variables.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ProfileHeader from "./components/headers/profileHeader/ProfileHeader";
 import HomePage from "./pages/Home/HomePage";
 import RootLayout from "./pages/Root";
+import FriendsPage from "./pages/Friends/FriendsPage";
+import ChatsPage from "./pages/Chats/ChatsPage";
+import EventPage from "./pages/Events/EventPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    children: [{ path: "/", element: <HomePage /> }],
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "/friends", element: <FriendsPage /> },
+      { path: "/newEvent", element: <FriendsPage /> },
+      { path: "/chats", element: <ChatsPage /> },
+    ],
+  },
+  {
+    path: "/event/:eventId",
+    element: <RootLayout />,
+    children: [{ index: true, element: <EventPage /> }],
   },
 ]);
 

@@ -1,32 +1,10 @@
 // import { NavLink } from 'react-router-dom';
 import styles from "./Sidebar.module.css";
 import { AiOutlineHome, AiOutlinePlus, AiOutlineWechat } from "react-icons/ai";
+
+import { IoChatbubblesOutline } from "react-icons/io5";
 import { LiaUserFriendsSolid } from "react-icons/lia";
 import { NavLink } from "react-router-dom";
-// import { IoChatbubblesOutline } from 'react-icons/io';
-
-// const Sidebar = () => {
-//   return (
-//     <div className="sidebar">
-//       <NavLink to="/inbox" activeClassName="active" className="menu-item">
-//         <i className="fas fa-inbox"></i>
-//         <span>Inbox</span>
-//       </NavLink>
-//       <NavLink to="/mail" activeClassName="active" className="menu-item">
-//         <i className="fas fa-envelope"></i>
-//         <span>Mail</span>
-//       </NavLink>
-//       <NavLink to="/drafts" activeClassName="active" className="menu-item">
-//         <i className="fas fa-file-alt"></i>
-//         <span>Drafts</span>
-//       </NavLink>
-//       <NavLink to="/send" activeClassName="active" className="menu-item">
-//         <i className="fas fa-paper-plane"></i>
-//         <span>Send</span>
-//       </NavLink>
-//     </div>
-//   );
-// };
 
 const Sidebar = () => {
   return (
@@ -39,18 +17,27 @@ const Sidebar = () => {
         <AiOutlineHome />
         <span> Home</span>
       </NavLink>
-      <a>
+      <NavLink
+        to="/friends"
+        className={({ isActive }) => (isActive ? styles.active : undefined)}
+      >
         <LiaUserFriendsSolid />
         <span> Friends</span>
-      </a>
-      <a>
+      </NavLink>
+      <NavLink
+        to="/newEvent"
+        className={({ isActive }) => (isActive ? styles.active : undefined)}
+      >
         <AiOutlinePlus />
         <span> Add Event</span>
-      </a>
-      <a>
-        <AiOutlineWechat />
+      </NavLink>
+      <NavLink
+        to="/chats"
+        className={({ isActive }) => (isActive ? styles.active : undefined)}
+      >
+        <IoChatbubblesOutline />
         <span> Chats</span>
-      </a>
+      </NavLink>
     </div>
   );
 };
