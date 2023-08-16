@@ -1,4 +1,6 @@
 import React from "react";
+import MainInfo from "./MainInfo";
+import EventDetails from "./EventDetails";
 
 const eventInfo = {
   id: 1,
@@ -21,7 +23,29 @@ const eventInfo = {
 };
 
 const EventInfo = () => {
-  return <div>{eventInfo.title}</div>;
+  return (
+    <div
+      style={{
+        // backgroundColor: "red",
+        display: "flex",
+        flexDirection: "column",
+        alignContent: "center",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 10,
+      }}
+    >
+      <MainInfo />
+      <EventDetails
+        description={eventInfo.description}
+        creator={{
+          name: "Pepe Argento",
+          profilePicture:
+            "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+        }}
+      />
+    </div>
+  );
 };
 
 export default EventInfo;
