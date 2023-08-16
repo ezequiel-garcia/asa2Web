@@ -1,14 +1,15 @@
     .mainInfo-container {
-        width: 90%;
+        width: 100%;
          background-color: #ffffff;
          display: flex;
          align-items: center;
-         margin: -15px 0;
+        margin-top: 20px;
          padding: 20px;
          border-radius: 10px;
          z-index: 100;
-         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.123);
+         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.041), -1px -1px 20px 1px rgba(0, 0, 0, 0.067) ;
         }
+
 
    .dateAndHour {
      /* width: 100%; */
@@ -36,23 +37,24 @@
     justify-content: center;
     gap: 4px;
 }
-    /* alignItems: 'center',
-         textAlign: 'center', */
-/* 
 
-       },
-       text: {
-         fontSize: 15,
-         color: 'white',
-         textAlign: 'center',
-         fontWeight: '300',
-       },
-       title: {
-         fontWeight: '600',
-         fontSize: 18,
-         marginBottom: 10,
-       },
-     });
-       )
-     }
-     */
+
+/* EVENT INFO */
+
+.event-info-container{
+    /* background-color: red; */
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 10;
+    max-width: 960px;
+  }
+
+  @media(min-width: 760px){
+    .event-info-container{
+        width: 80%;
+    }
+  }

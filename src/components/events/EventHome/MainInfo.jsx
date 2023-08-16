@@ -46,24 +46,11 @@ const MainInfo = () => {
         <div className={styles["info-container"]}>
           <h3 className={styles.title}>{currentEvent?.title}</h3>
           <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-            {/* <Entypo
-                style={styles.icon}
-                name="calendar"
-                size={24}
-                color={Colors.light.secondary200}
-              /> */}
-
             <BiTime size={20} color="#FF6B00" />
 
             <h4>{`   ${eventDay} - ${currentEvent.hour} hs`}</h4>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
-            {/* <Entypo
-                style={styles.icon}
-                name="direction"
-                size={24}
-                color={Colors.light.secondary200}
-              /> */}
             <BiMap size={20} color="#FF6B00" />
             <h4>{`${currentEvent?.location}`} </h4>
           </div>

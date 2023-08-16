@@ -1,0 +1,35 @@
+.participants-title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.add-participant{
+    color:var(--tertiary)
+}
+
+.profiles {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    
+  }
+
+.profile-picture {
+       width: 70px;
+       height: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+    
+
+}
+
+.name {
+    font-size: 12px;
+    overflow: hidden;
+    text-align: center;
+
+  }

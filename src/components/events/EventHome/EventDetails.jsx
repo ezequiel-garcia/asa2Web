@@ -1,19 +1,20 @@
 import React from "react";
+import styles from "./EventDetails.module.css";
 
 const EventDetails = ({ description, creator }) => {
   return (
-    <div style={{ width: "90%", marginTop: "20px" }}>
-      <div style={{ marginBottom: "15px" }}>
-        <h3>Event Information</h3>
+    <div className={styles["event-details-container"]}>
+      <div>
+        <h3>Event Description</h3>
         <p>{description}</p>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+      <div className={styles["event-creator"]}>
         <img
           src={creator.profilePicture}
           style={{ width: 80, height: 80, borderRadius: 20 }}
         />
         <div>
-          <h3 style={{ marginBottom: 5 }}>Event Creator</h3>
+          <h3>Event Creator</h3>
           <p>{creator.name}</p>
         </div>
       </div>
