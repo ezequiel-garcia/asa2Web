@@ -6,6 +6,7 @@ import RootLayout from "./pages/Root";
 import FriendsPage from "./pages/Friends/FriendsPage";
 import ChatsPage from "./pages/Chats/ChatsPage";
 import EventPage from "./pages/Events/EventPage";
+import EventLayout from "./pages/EventLayout";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/event/:eventId",
-    element: <RootLayout />,
+    element: <EventLayout />,
     children: [{ index: true, element: <EventPage /> }],
   },
 ]);
