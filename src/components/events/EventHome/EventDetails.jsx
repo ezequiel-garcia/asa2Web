@@ -11,7 +11,12 @@ const EventDetails = ({ description, creator }) => {
       <div className={styles["event-creator"]}>
         <img
           src={creator.profilePicture}
-          style={{ width: 80, height: 80, borderRadius: 20 }}
+          style={{
+            width: 80,
+            height: 80,
+            borderRadius: 20,
+            objectFit: "cover",
+          }}
         />
         <div>
           <h3>Event Creator</h3>

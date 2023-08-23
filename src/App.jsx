@@ -7,6 +7,7 @@ import FriendsPage from "./pages/Friends/FriendsPage";
 import ChatsPage from "./pages/Chats/ChatsPage";
 import EventPage from "./pages/Events/EventPage";
 import EventLayout from "./pages/EventLayout";
+import Tasks from "./components/events/Tasks/Tasks";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/event/:eventId",
     element: <EventLayout />,
-    children: [{ index: true, element: <EventPage /> }],
+    children: [
+      { index: true, element: <EventPage /> },
+      { path: "tasks", element: <Tasks /> },
+    ],
   },
 ]);
 
@@ -32,6 +36,7 @@ function App() {
     //   <ProfileHeader />
     //   <HomePage />
     // </>
+
     <RouterProvider router={router} />
   );
 }

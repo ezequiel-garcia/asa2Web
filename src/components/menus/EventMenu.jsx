@@ -15,13 +15,15 @@ const EventMenu = () => {
       <NavLink
         to={`/event/${eventId}`}
         className={({ isActive }) => (isActive ? styles.active : undefined)}
+        end
       >
         <div className={styles.separator}></div>
         <span> General</span>
       </NavLink>
       <NavLink
-        to="/friends"
+        to="tasks"
         className={({ isActive }) => (isActive ? styles.active : undefined)}
+        end
       >
         <span> Tasks</span>
       </NavLink>

@@ -6,8 +6,18 @@
     
 }
 
+.event-container{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 960px;
+
+}
+
 @media (min-width: 760px) {
     .main-container{
         margin-left: 170px;
+    }
+    .event-container{
+        width: 80%;
     }
 };
