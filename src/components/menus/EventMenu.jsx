@@ -28,7 +28,7 @@ const EventMenu = () => {
         <span> Tasks</span>
       </NavLink>
       <NavLink
-        to="/newEvent"
+        to="bills"
         className={({ isActive }) => (isActive ? styles.active : undefined)}
       >
         <span> Bills</span>

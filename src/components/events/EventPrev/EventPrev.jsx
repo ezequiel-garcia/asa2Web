@@ -22,7 +22,7 @@ const EventPrev = ({ event }) => {
         />
         <div className={styles["description-container"]}>
           <h3>{title}</h3>
-          <p>
+          <p className="text-sm">
             {description?.length < 55
               ? description
               : description.slice(0, 55) + " ..."}
