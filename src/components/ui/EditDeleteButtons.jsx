@@ -6,7 +6,7 @@ const EditDeleteButtons = ({ editAction, deleteAction }) => {
         {<AiOutlineEdit className=" text-xl" />}
       </button>
       <button onClick={deleteAction}>
-        {<AiOutlineDelete className="text-xl text-coral-red " />}
+        {<AiOutlineDelete className="text-xl text-red-600 " />}
       </button>
     </div>
   );

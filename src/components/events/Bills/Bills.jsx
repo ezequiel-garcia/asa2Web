@@ -4,6 +4,10 @@ const Bills = () => {
   return (
     <div className="mt-10">
       <IndividualBill />
+      <IndividualBill />
+      <IndividualBill />
+      <IndividualBill />
+      <IndividualBill />
     </div>
   );
 };
