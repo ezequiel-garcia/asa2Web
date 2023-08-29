@@ -1,14 +1,7 @@
 import { getDateForPrev } from "../../../util/dateFunctions";
 import EditDeleteButtons from "../../ui/EditDeleteButtons";
 
-const IndividualBill = () => {
-  const bill = {
-    date: new Date(),
-    title: "Meat",
-    amount: 200,
-    paiedBy: "Pepe Argento",
-  };
-
+const IndividualBill = ({ bill }) => {
   const { date, title, amount, paiedBy } = bill;
   const dateFormat = getDateForPrev(date);
   return (

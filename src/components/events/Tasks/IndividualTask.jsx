@@ -3,7 +3,7 @@ import { Checkbox, cn } from "@nextui-org/react";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import EditDeleteButtons from "../../ui/EditDeleteButtons";
 
-const IndividualTask = ({ task, owner }) => {
+const IndividualTask = ({ task }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const editAction = () => {
@@ -29,9 +29,9 @@ const IndividualTask = ({ task, owner }) => {
       <div className="flex w-full justify-between items-center">
         <div>
           <p className={`${isSelected ? "line-through" : ""} text-neutral-700`}>
-            {task}
+            {task.task}
           </p>
-          <p className="text-default-400 text-xs">{owner || "Take it"}</p>
+          <p className="text-default-400 text-xs">{task.owner || "Take it"}</p>
         </div>
         {
           <EditDeleteButtons
