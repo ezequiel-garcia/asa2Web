@@ -1,6 +1,6 @@
 import React from "react";
 
-const AddButton = (buttonAction) => {
+const AddButton = ({ buttonAction }) => {
   return (
     <button
       onClick={buttonAction}

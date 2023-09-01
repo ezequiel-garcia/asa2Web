@@ -1,7 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import IndividualTask from "./IndividualTask";
 import AddButton from "../../ui/AddButton";
 import TasksModal from "./TasksModal";
+import { useDisclosure } from "@nextui-org/react";
 
 const tasks = [
   {
@@ -21,13 +22,24 @@ const tasks = [
   },
 ];
 
+const addTask = (task) => {
+  tasks.push(task);
+};
+
 const Tasks = () => {
+  const [showModal, setShowModal] = useState(false);
+  const show = () => setShowModal(true);
+
   return (
     <div className="mt-10">
       <div className="px-2">
-        <AddButton />
+        <AddButton buttonAction={show} />
       </div>
-      <TasksModal />
+      <TasksModal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        addTask={addTask}
+      />
       {tasks.map((task) => (
         <IndividualTask key={task.id} task={task} />
       ))}
