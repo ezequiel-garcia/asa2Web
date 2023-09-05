@@ -1,7 +1,7 @@
 import { getDateForPrev } from "../../../util/dateFunctions";
 import EditDeleteButtons from "../../ui/EditDeleteButtons";
 
-const IndividualBill = ({ bill }) => {
+const IndividualBill = ({ bill, onEdit }) => {
   const { date, title, amount, paiedBy } = bill;
   const dateFormat = getDateForPrev(date);
   return (
@@ -16,7 +16,7 @@ const IndividualBill = ({ bill }) => {
           <div className="description-container">
             <h3>{title}</h3>
             <p className="text-sm">
-              {paiedBy}{" "}
+              {paiedBy.name}{" "}
               <span className="font-normal text-tertiary lg:hidden">
                 paied ${amount}
               </span>
@@ -26,7 +26,7 @@ const IndividualBill = ({ bill }) => {
       </div>
       <div className="flex gap-6 items-center justify-between">
         <p className="hidden font-light  text-tertiary lg:inline">${amount}</p>
-        <EditDeleteButtons />
+        <EditDeleteButtons editAction={() => onEdit(bill)} />
       </div>
     </div>
   );

@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { Select, SelectItem } from "@nextui-org/react";
 
-const SelectUser = ({ eventUsers, setAssigned }) => {
+const SelectUser = ({ eventUsers, setAssigned, onEdit }) => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
+    if (onEdit) {
+      setValue(onEdit.owner);
+      console.log(onEdit.owner);
+    }
     setAssigned(value);
-  }, [value]);
+  }, [value, onEdit]);
 
   const handleOnChange = (e) => {
     setValue(e.target.value);
@@ -23,7 +27,7 @@ const SelectUser = ({ eventUsers, setAssigned }) => {
       label="Assigned to"
       placeholder="Not assigned"
       variant="bordered"
-      defaultSelectedKeys={[""]}
+      defaultSelectedKeys={onEdit ? [onEdit.id] : [""]}
       //   className="bg-red-400 border-1 rounded-sm "
       //   selectedKeys={value}
       onChange={handleOnChange}
@@ -33,7 +37,7 @@ const SelectUser = ({ eventUsers, setAssigned }) => {
       {eventUsers.map((user) => (
         <SelectItem
           key={user.id}
-          errorMessage={"You must select a cat"}
+          //   errorMessage={}
           textValue={user.name}
           startContent={<ProfilePicture url={user.profilePicture} />}
         >

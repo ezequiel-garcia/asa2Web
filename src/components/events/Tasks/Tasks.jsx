@@ -28,7 +28,17 @@ const addTask = (task) => {
 
 const Tasks = () => {
   const [showModal, setShowModal] = useState(false);
-  const show = () => setShowModal(true);
+  const [editTask, setEditTask] = useState(null);
+
+  const show = () => {
+    setEditTask(null);
+    setShowModal(true);
+  };
+
+  const onEdit = (taskForEdit) => {
+    setEditTask(taskForEdit);
+    setShowModal(true);
+  };
 
   return (
     <div className="mt-10">
@@ -39,9 +49,10 @@ const Tasks = () => {
         showModal={showModal}
         setShowModal={setShowModal}
         addTask={addTask}
+        onEdit={editTask}
       />
       {tasks.map((task) => (
-        <IndividualTask key={task.id} task={task} />
+        <IndividualTask key={task.id} task={task} onEdit={onEdit} />
       ))}
     </div>
   );

@@ -9,49 +9,45 @@ import {
   useDisclosure,
   Input,
 } from "@nextui-org/react";
-import SelectUser from "./SelectUser";
 
-import { users } from "../../../dummyData";
-
-const TasksModal = ({ onEdit, showModal, setShowModal, addTask }) => {
+const BillsModal = ({ onEdit, showModal, setShowModal, addBill }) => {
   const { onOpen, isOpen, onOpenChange } = useDisclosure();
-  const [assigned, setAssigned] = useState("");
-  const [taskTitle, setTaskTitle] = useState("");
+  //   const [assigned, setAssigned] = useState("");
+  const [billTitle, setBillTitle] = useState("");
+  const [billAmount, setBillAmount] = useState(0.0);
   const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     if (showModal) onOpen();
     if (onEdit) {
-      setTaskTitle(onEdit.task);
-      setAssigned("Josh");
+      setBillTitle(onEdit.title);
+      setBillAmount(onEdit.amount);
     } else {
       resetValues();
     }
   }, [showModal, onEdit]);
 
   const handleChange = (e) => {
-    setTaskTitle(e.target.value);
+    e.target.name === "title" ? setBillTitle(e.target.value) : null;
+    e.target.name === "amount" ? setBillAmount(e.target.value) : 0;
   };
 
   const resetValues = () => {
-    setAssigned("");
-    setTaskTitle("");
+    setBillAmount(0.0);
+    setBillTitle("");
     setIsValid(true);
   };
 
   const handleClose = () => {
-    console.log("saliendo amigo");
     resetValues();
     setShowModal(false);
   };
 
   const handleSave = (onClose) => {
-    // console.log(taskTitle + " " + assigned);
-    // setIsValid(taskTitle.trim().length > 0);
-    if (taskTitle.trim().length > 0) {
-      addTask({ id: taskTitle, task: taskTitle, owner: assigned });
+    if (billTitle.trim().length > 0) {
+      //   addBill({ , task: taskTitle, owner: assigned });
       setAssigned("");
-      setTaskTitle("");
+      setBillTitle("");
       setIsValid(true);
       onClose();
     } else {
@@ -72,26 +68,39 @@ const TasksModal = ({ onEdit, showModal, setShowModal, addTask }) => {
           {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
-                {onEdit ? "Edit Task" : "New Task"}
+                {onEdit ? "Edit Bill" : "New Bill"}
               </ModalHeader>
               <ModalBody>
                 <Input
                   autoFocus
-                  label="Task"
-                  placeholder="Enter new task"
+                  name="title"
+                  label="Bill Title"
+                  placeholder="Enter bill title"
                   variant="bordered"
-                  value={taskTitle}
+                  value={billTitle}
                   onChange={handleChange}
                   isRequired
-                  errorMessage={!isValid && "You have to fill the task title"}
+                  errorMessage={!isValid && "You have to fill the bill title"}
                   //   validationState={!isValid ? "invalid" : "valid"}
                   validationState="valid"
                 />
-                <SelectUser
+                <Input
+                  label="Bill Amount"
+                  name="amount"
+                  placeholder="0.00"
+                  variant="bordered"
+                  value={billAmount}
+                  onChange={handleChange}
+                  type="number"
+                  errorMessage={!isValid && "You have to fill the bill title"}
+                  //   validationState={!isValid ? "invalid" : "valid"}
+                  validationState="valid"
+                />
+                {/* <SelectUser
                   eventUsers={users}
                   setAssigned={setAssigned}
                   onEdit={onEdit}
-                />
+                /> */}
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="flat" onPress={onClose}>
@@ -112,4 +121,4 @@ const TasksModal = ({ onEdit, showModal, setShowModal, addTask }) => {
   );
 };
 
-export default TasksModal;
+export default BillsModal;

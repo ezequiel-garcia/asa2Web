@@ -3,11 +3,12 @@ import { Checkbox, cn } from "@nextui-org/react";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import EditDeleteButtons from "../../ui/EditDeleteButtons";
 
-const IndividualTask = ({ task }) => {
+const IndividualTask = ({ task, onEdit }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const editAction = () => {
     console.log("EDit clicked");
+    onEdit(task);
   };
 
   const deleteAction = () => {
