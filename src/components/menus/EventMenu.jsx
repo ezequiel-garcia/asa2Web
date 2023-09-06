@@ -34,7 +34,7 @@ const EventMenu = () => {
         <span> Bills</span>
       </NavLink>
       <NavLink
-        to="/chats"
+        to="chat"
         className={({ isActive }) => (isActive ? styles.active : undefined)}
       >
         <span>Chat</span>

@@ -5,7 +5,7 @@ const IndividualBill = ({ bill, onEdit }) => {
   const { date, title, amount, paiedBy } = bill;
   const dateFormat = getDateForPrev(date);
   return (
-    <div className="flex items-center justify-between w-full px-2 py-4 border-b-1 border-stone-100">
+    <div className="flex items-center justify-between w-full px-2 py-3 border-b-1 border-stone-100">
       <div className="flex flex-[4] gap-3">
         <div className="flex flex-col items-center">
           <p className="font-extralight text-lg">{dateFormat.day}</p>

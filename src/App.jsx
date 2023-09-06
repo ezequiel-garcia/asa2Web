@@ -9,6 +9,7 @@ import EventPage from "./pages/Events/EventPage";
 import EventLayout from "./pages/EventLayout";
 import Tasks from "./components/events/Tasks/Tasks";
 import Bills from "./components/events/Bills/Bills";
+import Chats from "./components/events/Chat/Chats";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
       { index: true, element: <EventPage /> },
       { path: "tasks", element: <Tasks /> },
       { path: "bills", element: <Bills /> },
+      { path: "chat", element: <Chats /> },
     ],
   },
 ]);
