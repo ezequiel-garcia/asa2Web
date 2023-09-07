@@ -12,7 +12,7 @@ const message = {
 
 const IndividualChat = () => {
   return (
-    <div className="flex justify-between  w-full bg-primary rounded p-2">
+    <div className="flex justify-between  w-full bg-primary rounded p-2 my-3">
       <div className="flex items-center gap-4">
         {message.sentBy !== user.id && (
           <img
