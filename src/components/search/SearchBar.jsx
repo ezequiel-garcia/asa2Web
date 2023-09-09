@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import styles from './SearchBar.module.css';
+import styles from "./SearchBar.module.css";
 // import { useState } from 'react';
-import { BsSearch } from 'react-icons/bs';
+import { BsSearch } from "react-icons/bs";
 
 const SearchBar = ({ searchQuery, onSearch }) => {
   //   const [searchQuery, setSearchQuery] = useState('');
@@ -12,7 +12,7 @@ const SearchBar = ({ searchQuery, onSearch }) => {
   };
 
   return (
-    <div className={styles.searchbar}>
+    <div className={`shadow-md ${styles.searchbar}`}>
       <input
         type="text"
         placeholder="Search..."

@@ -4,25 +4,24 @@ import { users } from "../../../dummyData";
 
 const user = users[0];
 
-const message = {
-  message: "Hi my friends how are u??",
-  time: "15:20",
-  sentBy: 2,
-};
-
-const IndividualChat = () => {
+const IndividualChat = ({ message }) => {
   return (
-    <div className="flex justify-between  w-full bg-primary rounded p-2 my-3">
+    <div
+      className={`flex justify-between  bg-primary rounded p-2 m-2 ${
+        message.sentBy === user.id ? "bg-primary-50" : null
+      }`}
+    >
       <div className="flex items-center gap-4">
         {message.sentBy !== user.id && (
           <img
             src={user.profilePicture}
-            className="w-12 h-12 rounded-md object-cover"
+            className="w-10 h-10 lg:w-14 lg:h-14 rounded object-cover"
           />
         )}
-        <div>
-          <div>{message.sentBy !== user.id ? user.name : "You"}</div>
-          <div>{message.message}</div>
+
+        <div className="flex-1">
+          <h3>{message.sentBy !== user.id ? user.name : "You"}</h3>
+          <p>{message.message}</p>
         </div>
       </div>
       {/* Time */}
